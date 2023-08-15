@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../globals.css" />
+    <link
+      rel="icon"
+      href="../../public/favicon.svg"
+      sizes="any"
+      type="image/svg"
+    />
+    <title>Việt Thế</title>
+  </head>
+  <body>
+    <div class="landing">
+      <nav class="container nav">
+        <header class="header">
+          <a href="../index.html" class="nav__home focus-ring">
+            <h1 class="header__title">Việt Thế</h1>
+          </a>
+          <div class="nav__item header__subtitle">
+            Discover Vietnam's
+            <span class="header__subtitle-child">Charm</span>
+          </div>
+        </header>
+        <div class="nav__item nav__center"></div>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="focus-ring nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="focus-ring nav__link">Events</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="focus-ring nav__link">Destinations</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="focus-ring nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="container register__container">
+        <form class="register__form" method="post">
+          <h2 class="register__title">Discover Vietnam</h2>
+          <p class="register__details">Date: August 24 - 27, 2023</p>
+          <p class="register__details">Location: Hanoi, Vietnam</p>
+          <label class="register__label" for="companyName">Company name</label>
+          <input
+            class="focus-ring register__input"
+            type="text"
+            id="companyName"
+            name="companyName"
+            required
+          />
+          <label class="register__label" for="boothSize">Booth size</label>
+          <select
+            class="focus-ring register__input"
+            id="boothSize"
+            name="boothSize"
+          >
+            <option value="10x10">10x10 ft</option>
+            <option value="10x15">10x15 ft</option>
+          </select>
+          <label class="register__label">Tables needed</label>
+          <input
+            type="checkbox"
+            id="tablesNeeded"
+            name="tablesNeeded"
+            class="register__checkbox"
+          />
+          <label class="register__label" for="numChairs">
+            Number of chairs
+          </label>
+          <input
+            class="focus-ring register__input"
+            type="number"
+            id="numChairs"
+            name="numChairs"
+            min="0"
+            value="0"
+          />
+          <label class="register__label" for="contactName">Contact name</label>
+          <input
+            class="focus-ring register__input"
+            type="text"
+            id="contactName"
+            name="contactName"
+            required
+          />
+          <label class="register__label" for="contactTel">Contact tel</label>
+          <input
+            class="focus-ring register__input"
+            type="tel"
+            id="contactTel"
+            name="contactTel"
+            pattern="[0-9]{10}"
+            required
+          />
+          <button class="focus-ring register__button" type="submit">
+            Register
+          </button>
+        </form>
+        <div class="register__watermark">FACE THE<br />HORIZON</div>
+      </section>
+    </div>
+    <footer class="container footer">
+      <div class="footer__text">
+        &copy; 2023 Việt Thế.
+        <span class="footer__text-child">All rights reserved.</span>
+      </div>
+    </footer>
+    <div class="indicator"></div>
+  </body>
+</html>
