@@ -41,6 +41,7 @@
   --heading: #072974;
   --accent: #d14168;
   --highlight: #8cf6db;
+  --destructive: #f41b00;
 }
 
 /* Basic styling */
@@ -61,6 +62,30 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 0px;
+}
+
+/* Common styles */
+.no-ring {
+  outline: none;
+  box-shadow: none;
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--accent);
+}
+
+.destructive-ring {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--destructive);
+}
+
+.block {
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* Navigation styles */
@@ -91,8 +116,9 @@ button {
 
 .nav__link {
   font-size: 1.2rem;
-  color: var(--foreground);
   font-weight: bold;
+  color: var(--foreground);
+  border-radius: 4px;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -105,12 +131,6 @@ button {
   margin: 0 1rem 0.5rem 1rem;
   transition: opacity 0.3s ease-in-out;
   padding: 0;
-}
-
-.focus-ring:focus-visible {
-  outline: none;
-  border-radius: 4px;
-  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--accent);
 }
 
 .nav__home:hover {
@@ -334,9 +354,11 @@ button {
 }
 
 .register__container {
-  margin: 3rem auto;
+  display: flex;
+  padding: 3rem 0;
   max-width: 32rem !important;
   width: 100%;
+  flex: 1;
 }
 
 .register__title {
@@ -358,12 +380,20 @@ button {
 .register__form {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .register__label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
+}
+
+.register__field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .register__input {
@@ -373,12 +403,16 @@ button {
   border-radius: 6px;
   font-size: 1rem;
   background-color: #fff;
-  margin-bottom: 1rem;
 }
 
 .register__checkbox {
   width: fit-content;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.register__field-error {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .register__button {
@@ -398,27 +432,27 @@ button {
   opacity: 0.9;
 }
 
-/* .watermark {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-family: "title";
-  letter-spacing: 0.15em;
-  font-weight: 900;
-  color: var(--support);
-  opacity: 0.4;
-  user-select: none;
-} */
+.register__result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 60vh;
+}
+
+.register__result-text {
+  text-align: center;
+  font-size: 2rem;
+}
 
 .register__watermark {
   z-index: -10;
   position: absolute;
   inset: 0;
-  /* width: 100vw;
-  height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-family: "title";
   font-weight: 900;
   color: var(--support);
@@ -587,14 +621,15 @@ button {
   .destinations {
     padding: 1.5rem 0;
   }
-}
 
-/* max-sm */
-@media (max-width: 640px) {
   .watermark,
   .register__watermark {
     display: none;
   }
+}
+
+/* max-sm */
+@media (max-width: 640px) {
 }
 
 /* Container */

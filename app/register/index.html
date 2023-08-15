@@ -41,66 +41,99 @@
         </ul>
       </nav>
       <section class="container register__container">
-        <form class="register__form" method="post">
+        <form id="form" class="register__form" method="post" novalidate="true">
           <h2 class="register__title">Discover Vietnam</h2>
           <p class="register__details">Date: August 24 - 27, 2023</p>
           <p class="register__details">Location: Hanoi, Vietnam</p>
           <label class="register__label" for="companyName">Company name</label>
-          <input
-            class="focus-ring register__input"
-            type="text"
-            id="companyName"
-            name="companyName"
-            required
-          />
+          <div class="register__field">
+            <input
+              class="focus-ring register__input"
+              type="text"
+              id="companyName"
+              name="companyName"
+            />
+            <img
+              class="hidden register__field-error"
+              src="../../public/field-error.svg"
+              id="companyNameError"
+              title="Company name is required"
+            />
+          </div>
           <label class="register__label" for="boothSize">Booth size</label>
-          <select
-            class="focus-ring register__input"
-            id="boothSize"
-            name="boothSize"
-          >
-            <option value="10x10">10x10 ft</option>
-            <option value="10x15">10x15 ft</option>
-          </select>
+          <div class="register__field">
+            <select
+              class="focus-ring register__input"
+              id="boothSize"
+              name="boothSize"
+            >
+              <option value="10x10 ft">10x10 ft</option>
+              <option value="10x15 ft">10x15 ft</option>
+            </select>
+          </div>
           <label class="register__label">Tables needed</label>
-          <input
-            type="checkbox"
-            id="tablesNeeded"
-            name="tablesNeeded"
-            class="register__checkbox"
-          />
+          <div class="register__field">
+            <input
+              type="checkbox"
+              id="tablesNeeded"
+              name="tablesNeeded"
+              class="register__checkbox"
+            />
+          </div>
           <label class="register__label" for="numChairs">
             Number of chairs
           </label>
-          <input
-            class="focus-ring register__input"
-            type="number"
-            id="numChairs"
-            name="numChairs"
-            min="0"
-            value="0"
-          />
+          <div class="register__field">
+            <input
+              class="focus-ring register__input"
+              type="number"
+              id="numChairs"
+              name="numChairs"
+            />
+            <img
+              class="hidden register__field-error"
+              src="../../public/field-error.svg"
+              id="numChairsError"
+              title="The number of chairs must be from 1 to 10"
+            />
+          </div>
           <label class="register__label" for="contactName">Contact name</label>
-          <input
-            class="focus-ring register__input"
-            type="text"
-            id="contactName"
-            name="contactName"
-            required
-          />
+          <div class="register__field">
+            <input
+              class="focus-ring register__input"
+              type="text"
+              id="contactName"
+              name="contactName"
+            />
+            <img
+              class="hidden register__field-error"
+              src="../../public/field-error.svg"
+              id="contactNameError"
+              title="Contact name is required"
+            />
+          </div>
           <label class="register__label" for="contactTel">Contact tel</label>
-          <input
-            class="focus-ring register__input"
-            type="tel"
-            id="contactTel"
-            name="contactTel"
-            pattern="[0-9]{10}"
-            required
-          />
+          <div class="register__field">
+            <input
+              class="focus-ring register__input"
+              type="tel"
+              id="contactTel"
+              name="contactTel"
+            />
+            <img
+              class="hidden register__field-error"
+              src="../../public/field-error.svg"
+              id="contactTelError"
+              title="Contact telephone number must be numerical"
+            />
+          </div>
           <button class="focus-ring register__button" type="submit">
             Register
           </button>
         </form>
+        <div id="result" class="hidden register__result">
+          <p class="register__result-text">Stay tuned...</p>
+        </div>
         <div class="register__watermark">FACE THE<br />HORIZON</div>
       </section>
     </div>
@@ -111,5 +144,6 @@
       </div>
     </footer>
     <div class="indicator"></div>
+    <script src="script.js"></script>
   </body>
 </html>
